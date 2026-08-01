@@ -1,21 +1,8 @@
 const WHATSAPP = 'https://wa.me/5511960491973'
-const FLEET_IMG =
-  'https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=1800&q=80'
 
 export default function Fleet() {
   return (
     <section className="fleet section" id="frota" aria-labelledby="frota-title">
-      <div className="fleet-media">
-        <img
-          src={FLEET_IMG}
-          alt="Ônibus executivo da frota para locação e fretamento"
-          width={1800}
-          height={1200}
-          loading="lazy"
-        />
-      </div>
-      <div className="fleet-overlay" aria-hidden="true" />
-
       <div className="container">
         <div className="fleet-content reveal">
           <p className="section-label">Frota</p>

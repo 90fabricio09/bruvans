@@ -1,23 +1,10 @@
 import logo from '../assets/logo.png'
 
 const WHATSAPP = 'https://wa.me/5511960491973'
-const HERO_IMG =
-  'https://images.unsplash.com/photo-1544620341-65bdb627772f?auto=format&fit=crop&w=2000&q=80'
 
 export default function Hero() {
   return (
     <section className="hero" id="topo" aria-label="Apresentação">
-      <div className="hero-media" aria-hidden="true">
-        <img
-          src={HERO_IMG}
-          alt=""
-          width={2000}
-          height={1333}
-          fetchPriority="high"
-        />
-      </div>
-      <div className="hero-overlay" aria-hidden="true" />
-
       <div className="hero-content">
         <img
           src={logo}

@@ -7,9 +7,12 @@ import Fleet from './components/Fleet'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import WhatsAppFloat from './components/WhatsAppFloat'
+import NotFound from './components/NotFound'
 
-function useReveal() {
+function useReveal(enabled) {
   useEffect(() => {
+    if (!enabled) return undefined
+
     const nodes = document.querySelectorAll('.reveal')
     if (!nodes.length) return undefined
 
@@ -27,11 +30,27 @@ function useReveal() {
 
     nodes.forEach((node) => observer.observe(node))
     return () => observer.disconnect()
-  }, [])
+  }, [enabled])
+}
+
+function normalizePath(pathname) {
+  const clean = pathname.replace(/\/+$/, '')
+  return clean === '' ? '/' : clean
 }
 
 export default function App() {
-  useReveal()
+  const isHome = normalizePath(window.location.pathname) === '/'
+  useReveal(isHome)
+
+  useEffect(() => {
+    document.title = isHome
+      ? 'BRU VANS Locadora | Locação de Vans, Micro-ônibus e Ônibus em SP'
+      : 'Página não encontrada | BRU VANS Locadora'
+  }, [isHome])
+
+  if (!isHome) {
+    return <NotFound />
+  }
 
   return (
     <>
