@@ -6,6 +6,7 @@ import Services from './components/Services'
 import Fleet from './components/Fleet'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import WhatsAppFloat from './components/WhatsAppFloat'
 
 function useReveal() {
   useEffect(() => {
@@ -43,6 +44,7 @@ export default function App() {
         <Contact />
       </main>
       <Footer />
+      <WhatsAppFloat />
     </>
   )
 }

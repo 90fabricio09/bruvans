@@ -17,8 +17,8 @@
   --gradient-red: linear-gradient(165deg, #e02323 0%, #b31919 42%, #6e0a0a 78%, #4a0404 100%);
   --gradient-red-btn: linear-gradient(180deg, #d92222 0%, #a31616 52%, #5c0808 100%);
   --gradient-silver: linear-gradient(180deg, #ffffff 0%, #d0d0d0 48%, #8f8f8f 100%);
-  --font-display: 'Oswald', sans-serif;
-  --font-body: 'Outfit', sans-serif;
+  --font-display: 'Poppins', sans-serif;
+  --font-body: 'Poppins', sans-serif;
   --radius: 4px;
   --header-h: 80px;
   --max: 1120px;
@@ -77,9 +77,10 @@ ul {
 
 .section-label {
   font-family: var(--font-display);
-  font-size: 0.85rem;
-  letter-spacing: 0.22em;
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
+  font-weight: 600;
   background: var(--gradient-red);
   -webkit-background-clip: text;
   background-clip: text;
@@ -89,11 +90,11 @@ ul {
 
 .section-title {
   font-family: var(--font-display);
-  font-size: clamp(2rem, 4.5vw, 3.25rem);
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  line-height: 1.1;
+  font-size: clamp(1.85rem, 4vw, 2.85rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-transform: none;
+  line-height: 1.15;
   margin-bottom: 1rem;
   background: var(--gradient-silver);
   -webkit-background-clip: text;
@@ -116,9 +117,9 @@ ul {
   gap: 0.55rem;
   padding: 0.95rem 1.6rem;
   font-family: var(--font-display);
-  font-size: 0.95rem;
+  font-size: 0.88rem;
   font-weight: 600;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   border-radius: var(--radius);
   transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease,
@@ -309,10 +310,10 @@ ul {
 
 .hero h1 {
   font-family: var(--font-display);
-  font-size: clamp(2.15rem, 4.8vw, 3.5rem);
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  font-size: clamp(2rem, 4.5vw, 3.25rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-transform: none;
   line-height: 1.2;
   max-width: 18ch;
   margin: 0 auto 1.5rem;
@@ -377,9 +378,9 @@ ul {
 
 @media (min-width: 901px) {
   .hero h1 {
-    max-width: 32ch;
-    font-size: clamp(2.5rem, 3.4vw, 3.4rem);
-    line-height: 1.22;
+    max-width: 28ch;
+    font-size: clamp(2.4rem, 3.2vw, 3.15rem);
+    line-height: 1.2;
   }
 
   .hero-content {
@@ -454,10 +455,10 @@ ul {
 
 .pillar h3 {
   font-family: var(--font-display);
-  font-size: 1.55rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  text-transform: none;
   margin-bottom: 0.65rem;
   background: var(--gradient-silver);
   -webkit-background-clip: text;
@@ -493,21 +494,24 @@ ul {
 .service-item {
   display: flex;
   align-items: flex-start;
-  gap: 0.9rem;
-  padding: 1.35rem 1.1rem 1.35rem 0;
+  gap: 0.85rem;
+  padding: 1.35rem 1.25rem 1.35rem 1.15rem;
   border-bottom: 1px solid var(--line);
   border-right: 1px solid var(--line);
-  transition: background 0.25s ease, padding-left 0.25s ease;
+  transition:
+    background 0.35s ease,
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
 }
 
 .service-item:nth-child(3n) {
   border-right: none;
-  padding-right: 0;
 }
 
 .service-item:hover {
-  background: rgba(196, 30, 30, 0.05);
-  padding-left: 0.5rem;
+  background: rgba(196, 30, 30, 0.07);
+  transform: translateY(-2px);
+  box-shadow: inset 3px 0 0 var(--red-bright);
 }
 
 .service-mark {
@@ -523,17 +527,18 @@ ul {
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  transition: transform 0.25s ease;
+  transition: transform 0.35s ease;
 }
 
 .service-item:hover .service-mark {
-  transform: scale(1.15);
+  transform: scale(1.08);
 }
 
 .service-item span {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.35;
+  transition: color 0.35s ease;
 }
 
 /* Fleet strip */
@@ -659,10 +664,11 @@ ul {
 
 .contact-panel h3 {
   font-family: var(--font-display);
-  font-size: 1.6rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  line-height: 1.15;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  text-transform: none;
+  line-height: 1.2;
   background: var(--gradient-silver);
   -webkit-background-clip: text;
   background-clip: text;
@@ -746,6 +752,120 @@ ul {
   padding-top: 1.25rem;
 }
 
+/* WhatsApp float */
+.wa-float {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  left: auto;
+  z-index: 120;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.75rem;
+}
+
+.wa-btn {
+  width: 3.6rem;
+  height: 3.6rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--gradient-red-btn);
+  border: 1px solid rgba(224, 35, 35, 0.45);
+  color: #fff;
+  font-size: 1.75rem;
+  box-shadow: 0 10px 28px var(--red-glow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  animation: waPulse 2.8s ease-in-out infinite;
+}
+
+.wa-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  background: linear-gradient(180deg, #e83232 0%, #b31919 52%, #6e0a0a 100%);
+  box-shadow: 0 14px 36px var(--red-glow);
+  animation: none;
+}
+
+.wa-tip {
+  position: relative;
+  max-width: min(240px, calc(100vw - 5.5rem));
+  padding: 0.85rem 2rem 0.85rem 0.95rem;
+  background: #111;
+  border: 1px solid rgba(196, 30, 30, 0.4);
+  border-radius: 12px;
+  color: var(--text);
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 1.4;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  transform: translateY(8px) scale(0.96);
+  pointer-events: none;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.wa-tip.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.wa-tip-close {
+  position: absolute;
+  top: 0.35rem;
+  right: 0.35rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+  border-radius: 50%;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.wa-tip-close:hover {
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.wa-tip-arrow {
+  position: absolute;
+  right: 1.35rem;
+  left: auto;
+  bottom: -7px;
+  width: 12px;
+  height: 12px;
+  background: #111;
+  border-right: 1px solid rgba(196, 30, 30, 0.4);
+  border-bottom: 1px solid rgba(196, 30, 30, 0.4);
+  transform: rotate(45deg);
+}
+
+@keyframes waPulse {
+  0%,
+  100% {
+    box-shadow: 0 10px 28px var(--red-glow);
+  }
+  50% {
+    box-shadow: 0 10px 28px var(--red-glow), 0 0 0 10px rgba(196, 30, 30, 0.14);
+  }
+}
+
+@media (max-width: 600px) {
+  .wa-float {
+    right: 1rem;
+    bottom: 1rem;
+    left: auto;
+  }
+
+  .wa-btn {
+    width: 3.35rem;
+    height: 3.35rem;
+    font-size: 1.6rem;
+  }
+}
+
 /* Animations */
 @keyframes fadeUp {
   from {
@@ -807,7 +927,8 @@ ul {
 
   .service-item {
     border-right: none;
-    padding-right: 0;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
   .nav {
